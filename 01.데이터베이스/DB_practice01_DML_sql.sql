@@ -1,0 +1,22 @@
+use titanic;
+show tables;
+select * from p_info;
+select name from p_info;
+select name, age from p_info;
+desc p_info;p_infop_info
+select * from p_info limit 10;
+select * from p_info where sex="male";
+select * from p_info where age > 40 and sex !="male";
+select *from p_info where age > 20 and age < 50;
+select *from p_info where sibsp > 1 and parch > 1;
+select *from t_info where pclass = 1 ;
+select *from p_info where age > 20 and age < 50;
+select *from p_info where sibsp in (1,2,3);
+select *from p_info where name like"%eric";
+select *from p_info where age between 20 and 40;
+select *from t_info where fare between 100 and 1000;
+select *from t_info where Ticket like "pc%" and embarked in("c","s");
+select *from t_info where pclass in (1,2);
+select *from t_info where cabin like("%59%");
+select *from t_info where age is not null and name like"%James%" and age>=40 and sex="male";
+select * from p_info where age is not null and name like"%miss%" and age<=40 and sex="female" order by age desc;
