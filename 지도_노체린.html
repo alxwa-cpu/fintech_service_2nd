@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_15b3e47d65cbc12bfb040dfbce9aae4a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+        <div style="position: fixed; 
+                    top: 10px; left: 10px; width: 400px; height: 95%; 
+                    border:2px solid grey; z-index:9999; font-size:12px;
+                    background-color:rgba(255, 255, 255, 0.9);
+                    overflow-y: scroll; padding: 10px;">
+            <h4 style="margin-top:0; text-align:center;">담당자: 노체린</h4>
+            <hr style="border: 1px solid #ccc;">
+            <ul style="list-style-type: none; padding: 0;">
+        
+                <li style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
+                    <span style="display:inline-block; width:8px; height:8px; background-color:#1f77b4; border-radius:50%; vertical-align:middle;"></span>
+                    <b>낭만스시</b><br>
+                    <small style="margin-left: 12px;"><b>주소:</b> 경기 남양주시 경춘로1286번안길 23-3</small><br>
+                    <small style="margin-left: 12px;"><b>대표자명:</b> 김중한</small><br>
+                    <small style="margin-left: 12px;"><b>업종:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>연락처:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>교육 희망일:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>비즈폼:</b> <span style="color: green; font-weight: bold;">O</span></small><br>
+                    <small style="margin-left: 12px;"><b>비고:</b> </small>
+                </li>
+            
+                <li style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
+                    <span style="display:inline-block; width:8px; height:8px; background-color:#1f77b4; border-radius:50%; vertical-align:middle;"></span>
+                    <b>두께</b><br>
+                    <small style="margin-left: 12px;"><b>주소:</b> 경기 남양주시 평내동 585-8</small><br>
+                    <small style="margin-left: 12px;"><b>대표자명:</b> 한광석</small><br>
+                    <small style="margin-left: 12px;"><b>업종:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>연락처:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>교육 희망일:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>비즈폼:</b> <span style="color: green; font-weight: bold;">O</span></small><br>
+                    <small style="margin-left: 12px;"><b>비고:</b> 상인회 회장님</small>
+                </li>
+            
+                <li style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
+                    <span style="display:inline-block; width:8px; height:8px; background-color:#1f77b4; border-radius:50%; vertical-align:middle;"></span>
+                    <b>딩딩</b><br>
+                    <small style="margin-left: 12px;"><b>주소:</b> 평내동 582-5</small><br>
+                    <small style="margin-left: 12px;"><b>대표자명:</b> 신희주</small><br>
+                    <small style="margin-left: 12px;"><b>업종:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>연락처:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>교육 희망일:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>비즈폼:</b> <span style="color: red; font-weight: bold;">X</span></small><br>
+                    <small style="margin-left: 12px;"><b>비고:</b> 사장님 부재 중이셨으나 직원분께서 사장님과 전화해보신 후 
+말씀하시길 '별로 원하지 않으시는 것 같다.'고 하셨음</small>
+                </li>
+            
+                <li style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
+                    <span style="display:inline-block; width:8px; height:8px; background-color:#1f77b4; border-radius:50%; vertical-align:middle;"></span>
+                    <b>스탠다드커피랩</b><br>
+                    <small style="margin-left: 12px;"><b>주소:</b> 평내동 585</small><br>
+                    <small style="margin-left: 12px;"><b>대표자명:</b> 이송이</small><br>
+                    <small style="margin-left: 12px;"><b>업종:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>연락처:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>교육 희망일:</b> 월요일 제외, 14:00~15:00</small><br>
+                    <small style="margin-left: 12px;"><b>비즈폼:</b> <span style="color: green; font-weight: bold;">O</span></small><br>
+                    <small style="margin-left: 12px;"><b>비고:</b> </small>
+                </li>
+            
+                <li style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
+                    <span style="display:inline-block; width:8px; height:8px; background-color:#1f77b4; border-radius:50%; vertical-align:middle;"></span>
+                    <b>신현대부동산</b><br>
+                    <small style="margin-left: 12px;"><b>주소:</b> 평내동 582-7</small><br>
+                    <small style="margin-left: 12px;"><b>대표자명:</b> 윤혜정</small><br>
+                    <small style="margin-left: 12px;"><b>업종:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>연락처:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>교육 희망일:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>비즈폼:</b> <span style="color: red; font-weight: bold;">X</span></small><br>
+                    <small style="margin-left: 12px;"><b>비고:</b> 프로젝트 설명 완료 - 고민 중</small>
+                </li>
+            
+                <li style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
+                    <span style="display:inline-block; width:8px; height:8px; background-color:#1f77b4; border-radius:50%; vertical-align:middle;"></span>
+                    <b>제이디아트헤어</b><br>
+                    <small style="margin-left: 12px;"><b>주소:</b> 평내동 585-1</small><br>
+                    <small style="margin-left: 12px;"><b>대표자명:</b> 유혜민</small><br>
+                    <small style="margin-left: 12px;"><b>업종:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>연락처:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>교육 희망일:</b> 월 16:00</small><br>
+                    <small style="margin-left: 12px;"><b>비즈폼:</b> <span style="color: green; font-weight: bold;">O</span></small><br>
+                    <small style="margin-left: 12px;"><b>비고:</b> </small>
+                </li>
+            
+                <li style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
+                    <span style="display:inline-block; width:8px; height:8px; background-color:#1f77b4; border-radius:50%; vertical-align:middle;"></span>
+                    <b>춘천주닭갈비</b><br>
+                    <small style="margin-left: 12px;"><b>주소:</b> 평내동 582-6</small><br>
+                    <small style="margin-left: 12px;"><b>대표자명:</b> 이창주</small><br>
+                    <small style="margin-left: 12px;"><b>업종:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>연락처:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>교육 희망일:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>비즈폼:</b> <span style="color: green; font-weight: bold;">O</span></small><br>
+                    <small style="margin-left: 12px;"><b>비고:</b> </small>
+                </li>
+            
+                <li style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
+                    <span style="display:inline-block; width:8px; height:8px; background-color:#1f77b4; border-radius:50%; vertical-align:middle;"></span>
+                    <b>평내매운등갈비찜</b><br>
+                    <small style="margin-left: 12px;"><b>주소:</b> 평내동 586</small><br>
+                    <small style="margin-left: 12px;"><b>대표자명:</b> 최우혁</small><br>
+                    <small style="margin-left: 12px;"><b>업종:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>연락처:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>교육 희망일:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>비즈폼:</b> <span style="color: green; font-weight: bold;">O</span></small><br>
+                    <small style="margin-left: 12px;"><b>비고:</b> 등록된 사업자는 남편이지만 평소 상주 직원은 아내 분이라 관련 안내 필요</small>
+                </li>
+            
+                <li style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
+                    <span style="display:inline-block; width:8px; height:8px; background-color:#1f77b4; border-radius:50%; vertical-align:middle;"></span>
+                    <b>텍스퍼블릭</b><br>
+                    <small style="margin-left: 12px;"><b>주소:</b> 경기 남양주시 평내동 586-15</small><br>
+                    <small style="margin-left: 12px;"><b>대표자명:</b> 이영택</small><br>
+                    <small style="margin-left: 12px;"><b>업종:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>연락처:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>교육 희망일:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>비즈폼:</b> <span style="color: green; font-weight: bold;">O</span></small><br>
+                    <small style="margin-left: 12px;"><b>비고:</b> </small>
+                </li>
+            
+                <li style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
+                    <span style="display:inline-block; width:8px; height:8px; background-color:#1f77b4; border-radius:50%; vertical-align:middle;"></span>
+                    <b>토리신</b><br>
+                    <small style="margin-left: 12px;"><b>주소:</b> 평내동 582-5</small><br>
+                    <small style="margin-left: 12px;"><b>대표자명:</b> 이기욱</small><br>
+                    <small style="margin-left: 12px;"><b>업종:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>연락처:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>교육 희망일:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>비즈폼:</b> <span style="color: green; font-weight: bold;">O</span></small><br>
+                    <small style="margin-left: 12px;"><b>비고:</b> </small>
+                </li>
+            
+                <li style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
+                    <span style="display:inline-block; width:8px; height:8px; background-color:#1f77b4; border-radius:50%; vertical-align:middle;"></span>
+                    <b>투팜</b><br>
+                    <small style="margin-left: 12px;"><b>주소:</b> 평내동 586-2</small><br>
+                    <small style="margin-left: 12px;"><b>대표자명:</b> 양태종</small><br>
+                    <small style="margin-left: 12px;"><b>업종:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>연락처:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>교육 희망일:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>비즈폼:</b> <span style="color: red; font-weight: bold;">X</span></small><br>
+                    <small style="margin-left: 12px;"><b>비고:</b> </small>
+                </li>
+            </ul></div>
+    
+            <div class="folium-map" id="map_15b3e47d65cbc12bfb040dfbce9aae4a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_15b3e47d65cbc12bfb040dfbce9aae4a = L.map(
+                "map_15b3e47d65cbc12bfb040dfbce9aae4a",
+                {
+                    center: [37.646426431818185, 127.23614675454543],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 15,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b8e74ca878f67988275019568b11c317 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b8e74ca878f67988275019568b11c317.addTo(map_15b3e47d65cbc12bfb040dfbce9aae4a);
+        
+    
+            var circle_marker_5ac3653d1c38bb60a935098188a1d2f8 = L.circleMarker(
+                [37.64658465, 127.2362788],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_15b3e47d65cbc12bfb040dfbce9aae4a);
+        
+    
+        var popup_e896f774166ba4daa7c12f391c0761e4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c37f8f386d8b5887b3821db0788a6b37 = $(`<div id="html_c37f8f386d8b5887b3821db0788a6b37" style="width: 100.0%; height: 100.0%;">                 <b>점포명:</b> 낭만스시<br>                 <b>담당자:</b> 노체린<br>                 <b>주소:</b> 경기 남양주시 경춘로1286번안길 23-3<br>                 <b>대표자명:</b> 김중한<br>                 <b>업종:</b> <br>                 <b>연락처:</b> <br>                 <b>교육 희망일:</b> <br>                 <b>비즈폼 확인:</b> O<br>                 <b>비고:</b>              </div>`)[0];
+                popup_e896f774166ba4daa7c12f391c0761e4.setContent(html_c37f8f386d8b5887b3821db0788a6b37);
+            
+        
+
+        circle_marker_5ac3653d1c38bb60a935098188a1d2f8.bindPopup(popup_e896f774166ba4daa7c12f391c0761e4)
+        ;
+
+        
+    
+    
+            circle_marker_5ac3653d1c38bb60a935098188a1d2f8.bindTooltip(
+                `<div>
+                     낭만스시
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3236ffd3390217ed5adac80c1d198f9d = L.circleMarker(
+                [37.64650536, 127.2361175],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_15b3e47d65cbc12bfb040dfbce9aae4a);
+        
+    
+        var popup_0c7e67dc2aad26f6c72164f5a481ee34 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a640afcc30e39f0b0657ef9c9737cd6e = $(`<div id="html_a640afcc30e39f0b0657ef9c9737cd6e" style="width: 100.0%; height: 100.0%;">                 <b>점포명:</b> 두께<br>                 <b>담당자:</b> 노체린<br>                 <b>주소:</b> 경기 남양주시 평내동 585-8<br>                 <b>대표자명:</b> 한광석<br>                 <b>업종:</b> <br>                 <b>연락처:</b> <br>                 <b>교육 희망일:</b> <br>                 <b>비즈폼 확인:</b> O<br>                 <b>비고:</b> 상인회 회장님             </div>`)[0];
+                popup_0c7e67dc2aad26f6c72164f5a481ee34.setContent(html_a640afcc30e39f0b0657ef9c9737cd6e);
+            
+        
+
+        circle_marker_3236ffd3390217ed5adac80c1d198f9d.bindPopup(popup_0c7e67dc2aad26f6c72164f5a481ee34)
+        ;
+
+        
+    
+    
+            circle_marker_3236ffd3390217ed5adac80c1d198f9d.bindTooltip(
+                `<div>
+                     두께
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c9995f6d5be4beca6d59d34b34ec9acc = L.circleMarker(
+                [37.64640219, 127.2358052],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_15b3e47d65cbc12bfb040dfbce9aae4a);
+        
+    
+        var popup_b6841cad26ba5202554332585ca9c4f0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9d2457a671172eeb8d3aaae5f6732a3a = $(`<div id="html_9d2457a671172eeb8d3aaae5f6732a3a" style="width: 100.0%; height: 100.0%;">                 <b>점포명:</b> 딩딩<br>                 <b>담당자:</b> 노체린<br>                 <b>주소:</b> 평내동 582-5<br>                 <b>대표자명:</b> 신희주<br>                 <b>업종:</b> <br>                 <b>연락처:</b> <br>                 <b>교육 희망일:</b> <br>                 <b>비즈폼 확인:</b> <br>                 <b>비고:</b> 사장님 부재 중이셨으나 직원분께서 사장님과 전화해보신 후  말씀하시길 '별로 원하지 않으시는 것 같다.'고 하셨음             </div>`)[0];
+                popup_b6841cad26ba5202554332585ca9c4f0.setContent(html_9d2457a671172eeb8d3aaae5f6732a3a);
+            
+        
+
+        circle_marker_c9995f6d5be4beca6d59d34b34ec9acc.bindPopup(popup_b6841cad26ba5202554332585ca9c4f0)
+        ;
+
+        
+    
+    
+            circle_marker_c9995f6d5be4beca6d59d34b34ec9acc.bindTooltip(
+                `<div>
+                     딩딩
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b2fc867f24060a6a99c75e546a6567a7 = L.circleMarker(
+                [37.64663058, 127.2359991],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_15b3e47d65cbc12bfb040dfbce9aae4a);
+        
+    
+        var popup_4f00bcc37302de5b20dd14b12ea8253b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b8ee257a26dbf5d0f8f31d3fc91380d7 = $(`<div id="html_b8ee257a26dbf5d0f8f31d3fc91380d7" style="width: 100.0%; height: 100.0%;">                 <b>점포명:</b> 스탠다드커피랩<br>                 <b>담당자:</b> 노체린<br>                 <b>주소:</b> 평내동 585<br>                 <b>대표자명:</b> 이송이<br>                 <b>업종:</b> <br>                 <b>연락처:</b> <br>                 <b>교육 희망일:</b> 월요일 제외, 14:00~15:00<br>                 <b>비즈폼 확인:</b> O<br>                 <b>비고:</b>              </div>`)[0];
+                popup_4f00bcc37302de5b20dd14b12ea8253b.setContent(html_b8ee257a26dbf5d0f8f31d3fc91380d7);
+            
+        
+
+        circle_marker_b2fc867f24060a6a99c75e546a6567a7.bindPopup(popup_4f00bcc37302de5b20dd14b12ea8253b)
+        ;
+
+        
+    
+    
+            circle_marker_b2fc867f24060a6a99c75e546a6567a7.bindTooltip(
+                `<div>
+                     스탠다드커피랩
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e12cbd7669a16c2f069ae2f1c3786cda = L.circleMarker(
+                [37.64613024, 127.2361854],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_15b3e47d65cbc12bfb040dfbce9aae4a);
+        
+    
+        var popup_8bb589262bb799107db07d1aae722ce4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1ad2135ce9b98c3116a60b1e8c165a1f = $(`<div id="html_1ad2135ce9b98c3116a60b1e8c165a1f" style="width: 100.0%; height: 100.0%;">                 <b>점포명:</b> 신현대부동산<br>                 <b>담당자:</b> 노체린<br>                 <b>주소:</b> 평내동 582-7<br>                 <b>대표자명:</b> 윤혜정<br>                 <b>업종:</b> <br>                 <b>연락처:</b> <br>                 <b>교육 희망일:</b> <br>                 <b>비즈폼 확인:</b> <br>                 <b>비고:</b> 프로젝트 설명 완료 - 고민 중             </div>`)[0];
+                popup_8bb589262bb799107db07d1aae722ce4.setContent(html_1ad2135ce9b98c3116a60b1e8c165a1f);
+            
+        
+
+        circle_marker_e12cbd7669a16c2f069ae2f1c3786cda.bindPopup(popup_8bb589262bb799107db07d1aae722ce4)
+        ;
+
+        
+    
+    
+            circle_marker_e12cbd7669a16c2f069ae2f1c3786cda.bindTooltip(
+                `<div>
+                     신현대부동산
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cedc16ca3aa420520b2cd8f8a1b8a37c = L.circleMarker(
+                [37.64670311, 127.2361244],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_15b3e47d65cbc12bfb040dfbce9aae4a);
+        
+    
+        var popup_893b09965df54aa893eb8eac583ff504 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b3c7a5e5ec22e82899f428fffae107e9 = $(`<div id="html_b3c7a5e5ec22e82899f428fffae107e9" style="width: 100.0%; height: 100.0%;">                 <b>점포명:</b> 제이디아트헤어<br>                 <b>담당자:</b> 노체린<br>                 <b>주소:</b> 평내동 585-1<br>                 <b>대표자명:</b> 유혜민<br>                 <b>업종:</b> <br>                 <b>연락처:</b> <br>                 <b>교육 희망일:</b> 월 16:00<br>                 <b>비즈폼 확인:</b> O<br>                 <b>비고:</b>              </div>`)[0];
+                popup_893b09965df54aa893eb8eac583ff504.setContent(html_b3c7a5e5ec22e82899f428fffae107e9);
+            
+        
+
+        circle_marker_cedc16ca3aa420520b2cd8f8a1b8a37c.bindPopup(popup_893b09965df54aa893eb8eac583ff504)
+        ;
+
+        
+    
+    
+            circle_marker_cedc16ca3aa420520b2cd8f8a1b8a37c.bindTooltip(
+                `<div>
+                     제이디아트헤어
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3f18fdc3083a069dfcb47ab05858ca15 = L.circleMarker(
+                [37.64625628, 127.2360537],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_15b3e47d65cbc12bfb040dfbce9aae4a);
+        
+    
+        var popup_069860b21da36008a26eed0225819b2c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_64fbb6087e0817786b4144411c38f0d7 = $(`<div id="html_64fbb6087e0817786b4144411c38f0d7" style="width: 100.0%; height: 100.0%;">                 <b>점포명:</b> 춘천주닭갈비<br>                 <b>담당자:</b> 노체린<br>                 <b>주소:</b> 평내동 582-6<br>                 <b>대표자명:</b> 이창주<br>                 <b>업종:</b> <br>                 <b>연락처:</b> <br>                 <b>교육 희망일:</b> <br>                 <b>비즈폼 확인:</b> O<br>                 <b>비고:</b>              </div>`)[0];
+                popup_069860b21da36008a26eed0225819b2c.setContent(html_64fbb6087e0817786b4144411c38f0d7);
+            
+        
+
+        circle_marker_3f18fdc3083a069dfcb47ab05858ca15.bindPopup(popup_069860b21da36008a26eed0225819b2c)
+        ;
+
+        
+    
+    
+            circle_marker_3f18fdc3083a069dfcb47ab05858ca15.bindTooltip(
+                `<div>
+                     춘천주닭갈비
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0775cf4585f127dead9ab1c712b7b411 = L.circleMarker(
+                [37.64634736, 127.2362955],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_15b3e47d65cbc12bfb040dfbce9aae4a);
+        
+    
+        var popup_8a8649ee8c6e52e70799cbaadba6b38c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e537be1fe2d2d91f514e1a998adc6539 = $(`<div id="html_e537be1fe2d2d91f514e1a998adc6539" style="width: 100.0%; height: 100.0%;">                 <b>점포명:</b> 평내매운등갈비찜<br>                 <b>담당자:</b> 노체린<br>                 <b>주소:</b> 평내동 586<br>                 <b>대표자명:</b> 최우혁<br>                 <b>업종:</b> <br>                 <b>연락처:</b> <br>                 <b>교육 희망일:</b> <br>                 <b>비즈폼 확인:</b> O<br>                 <b>비고:</b> 등록된 사업자는 남편이지만 평소 상주 직원은 아내 분이라 관련 안내 필요             </div>`)[0];
+                popup_8a8649ee8c6e52e70799cbaadba6b38c.setContent(html_e537be1fe2d2d91f514e1a998adc6539);
+            
+        
+
+        circle_marker_0775cf4585f127dead9ab1c712b7b411.bindPopup(popup_8a8649ee8c6e52e70799cbaadba6b38c)
+        ;
+
+        
+    
+    
+            circle_marker_0775cf4585f127dead9ab1c712b7b411.bindTooltip(
+                `<div>
+                     평내매운등갈비찜
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9c813c6f4eb73b5b9d2607dcf89fa270 = L.circleMarker(
+                [37.64622706, 127.2364083],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_15b3e47d65cbc12bfb040dfbce9aae4a);
+        
+    
+        var popup_241fd3a5be21429e9f042092637ddbc3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_539a39b806c79dfb0baf42a621a2e2ae = $(`<div id="html_539a39b806c79dfb0baf42a621a2e2ae" style="width: 100.0%; height: 100.0%;">                 <b>점포명:</b> 텍스퍼블릭<br>                 <b>담당자:</b> 노체린<br>                 <b>주소:</b> 경기 남양주시 평내동 586-15<br>                 <b>대표자명:</b> 이영택<br>                 <b>업종:</b> <br>                 <b>연락처:</b> <br>                 <b>교육 희망일:</b> <br>                 <b>비즈폼 확인:</b> O<br>                 <b>비고:</b>              </div>`)[0];
+                popup_241fd3a5be21429e9f042092637ddbc3.setContent(html_539a39b806c79dfb0baf42a621a2e2ae);
+            
+        
+
+        circle_marker_9c813c6f4eb73b5b9d2607dcf89fa270.bindPopup(popup_241fd3a5be21429e9f042092637ddbc3)
+        ;
+
+        
+    
+    
+            circle_marker_9c813c6f4eb73b5b9d2607dcf89fa270.bindTooltip(
+                `<div>
+                     텍스퍼블릭
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e589e4bf855f10ae71807a21b0c86195 = L.circleMarker(
+                [37.64640219, 127.2358052],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_15b3e47d65cbc12bfb040dfbce9aae4a);
+        
+    
+        var popup_3abadd20b589d2c92e590a44e47158af = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8819b9b2f7c74f0a56325e37fd96c409 = $(`<div id="html_8819b9b2f7c74f0a56325e37fd96c409" style="width: 100.0%; height: 100.0%;">                 <b>점포명:</b> 토리신<br>                 <b>담당자:</b> 노체린<br>                 <b>주소:</b> 평내동 582-5<br>                 <b>대표자명:</b> 이기욱<br>                 <b>업종:</b> <br>                 <b>연락처:</b> <br>                 <b>교육 희망일:</b> <br>                 <b>비즈폼 확인:</b> O<br>                 <b>비고:</b>              </div>`)[0];
+                popup_3abadd20b589d2c92e590a44e47158af.setContent(html_8819b9b2f7c74f0a56325e37fd96c409);
+            
+        
+
+        circle_marker_e589e4bf855f10ae71807a21b0c86195.bindPopup(popup_3abadd20b589d2c92e590a44e47158af)
+        ;
+
+        
+    
+    
+            circle_marker_e589e4bf855f10ae71807a21b0c86195.bindTooltip(
+                `<div>
+                     토리신
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8ddf5f7a48dfe01e27c4378c98c9cd1a = L.circleMarker(
+                [37.64650173, 127.2365412],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_15b3e47d65cbc12bfb040dfbce9aae4a);
+        
+    
+        var popup_9c439796d9829ac82296d9283a5d6c65 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6e46ba859f389e321ac7cac4ab6a3b70 = $(`<div id="html_6e46ba859f389e321ac7cac4ab6a3b70" style="width: 100.0%; height: 100.0%;">                 <b>점포명:</b> 투팜<br>                 <b>담당자:</b> 노체린<br>                 <b>주소:</b> 평내동 586-2<br>                 <b>대표자명:</b> 양태종<br>                 <b>업종:</b> <br>                 <b>연락처:</b> <br>                 <b>교육 희망일:</b> <br>                 <b>비즈폼 확인:</b> <br>                 <b>비고:</b>              </div>`)[0];
+                popup_9c439796d9829ac82296d9283a5d6c65.setContent(html_6e46ba859f389e321ac7cac4ab6a3b70);
+            
+        
+
+        circle_marker_8ddf5f7a48dfe01e27c4378c98c9cd1a.bindPopup(popup_9c439796d9829ac82296d9283a5d6c65)
+        ;
+
+        
+    
+    
+            circle_marker_8ddf5f7a48dfe01e27c4378c98c9cd1a.bindTooltip(
+                `<div>
+                     투팜
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

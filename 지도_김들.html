@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_064d7a54773cebc70abf30efac70b6b8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+        <div style="position: fixed; 
+                    top: 10px; left: 10px; width: 400px; height: 95%; 
+                    border:2px solid grey; z-index:9999; font-size:12px;
+                    background-color:rgba(255, 255, 255, 0.9);
+                    overflow-y: scroll; padding: 10px;">
+            <h4 style="margin-top:0; text-align:center;">담당자: 김들</h4>
+            <hr style="border: 1px solid #ccc;">
+            <ul style="list-style-type: none; padding: 0;">
+        
+                <li style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
+                    <span style="display:inline-block; width:8px; height:8px; background-color:#d62728; border-radius:50%; vertical-align:middle;"></span>
+                    <b>또래오래</b><br>
+                    <small style="margin-left: 12px;"><b>주소:</b> 경기 남양주시 평내동 582-10</small><br>
+                    <small style="margin-left: 12px;"><b>대표자명:</b> 원재순</small><br>
+                    <small style="margin-left: 12px;"><b>업종:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>연락처:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>교육 희망일:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>비즈폼:</b> <span style="color: red; font-weight: bold;">X</span></small><br>
+                    <small style="margin-left: 12px;"><b>비고:</b> 프로젝트 관련 간단 설명 완료, 고민 후 다시 연락주신다고 하여 개인 연락처 제공함</small>
+                </li>
+            
+                <li style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
+                    <span style="display:inline-block; width:8px; height:8px; background-color:#d62728; border-radius:50%; vertical-align:middle;"></span>
+                    <b>맨날김치찌개</b><br>
+                    <small style="margin-left: 12px;"><b>주소:</b> 경기 남양주시 평내동 582-3</small><br>
+                    <small style="margin-left: 12px;"><b>대표자명:</b> 문희선</small><br>
+                    <small style="margin-left: 12px;"><b>업종:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>연락처:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>교육 희망일:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>비즈폼:</b> <span style="color: green; font-weight: bold;">O</span></small><br>
+                    <small style="margin-left: 12px;"><b>비고:</b> </small>
+                </li>
+            
+                <li style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
+                    <span style="display:inline-block; width:8px; height:8px; background-color:#d62728; border-radius:50%; vertical-align:middle;"></span>
+                    <b>봉정가든</b><br>
+                    <small style="margin-left: 12px;"><b>주소:</b> 평내동 588-18</small><br>
+                    <small style="margin-left: 12px;"><b>대표자명:</b> 최훈</small><br>
+                    <small style="margin-left: 12px;"><b>업종:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>연락처:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>교육 희망일:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>비즈폼:</b> <span style="color: green; font-weight: bold;">O</span></small><br>
+                    <small style="margin-left: 12px;"><b>비고:</b> </small>
+                </li>
+            
+                <li style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
+                    <span style="display:inline-block; width:8px; height:8px; background-color:#d62728; border-radius:50%; vertical-align:middle;"></span>
+                    <b>참치자객</b><br>
+                    <small style="margin-left: 12px;"><b>주소:</b> 평내동 579</small><br>
+                    <small style="margin-left: 12px;"><b>대표자명:</b> 김능수</small><br>
+                    <small style="margin-left: 12px;"><b>업종:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>연락처:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>교육 희망일:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>비즈폼:</b> <span style="color: green; font-weight: bold;">O</span></small><br>
+                    <small style="margin-left: 12px;"><b>비고:</b> </small>
+                </li>
+            
+                <li style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
+                    <span style="display:inline-block; width:8px; height:8px; background-color:#d62728; border-radius:50%; vertical-align:middle;"></span>
+                    <b>한잔더</b><br>
+                    <small style="margin-left: 12px;"><b>주소:</b> 평내동 582-2</small><br>
+                    <small style="margin-left: 12px;"><b>대표자명:</b> 차현주</small><br>
+                    <small style="margin-left: 12px;"><b>업종:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>연락처:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>교육 희망일:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>비즈폼:</b> <span style="color: green; font-weight: bold;">O</span></small><br>
+                    <small style="margin-left: 12px;"><b>비고:</b> </small>
+                </li>
+            
+                <li style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
+                    <span style="display:inline-block; width:8px; height:8px; background-color:#d62728; border-radius:50%; vertical-align:middle;"></span>
+                    <b>육담향</b><br>
+                    <small style="margin-left: 12px;"><b>주소:</b> 평내동 565-2</small><br>
+                    <small style="margin-left: 12px;"><b>대표자명:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>업종:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>연락처:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>교육 희망일:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>비즈폼:</b> <span style="color: red; font-weight: bold;">X</span></small><br>
+                    <small style="margin-left: 12px;"><b>비고:</b> </small>
+                </li>
+            
+                <li style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
+                    <span style="display:inline-block; width:8px; height:8px; background-color:#d62728; border-radius:50%; vertical-align:middle;"></span>
+                    <b>리얼파스타</b><br>
+                    <small style="margin-left: 12px;"><b>주소:</b> 평내동 565-2</small><br>
+                    <small style="margin-left: 12px;"><b>대표자명:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>업종:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>연락처:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>교육 희망일:</b> </small><br>
+                    <small style="margin-left: 12px;"><b>비즈폼:</b> <span style="color: red; font-weight: bold;">X</span></small><br>
+                    <small style="margin-left: 12px;"><b>비고:</b> </small>
+                </li>
+            </ul></div>
+    
+            <div class="folium-map" id="map_064d7a54773cebc70abf30efac70b6b8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_064d7a54773cebc70abf30efac70b6b8 = L.map(
+                "map_064d7a54773cebc70abf30efac70b6b8",
+                {
+                    center: [37.64622522142857, 127.23571195714285],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 15,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_3975932c9ba99d38ef7d91a861b60903 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_3975932c9ba99d38ef7d91a861b60903.addTo(map_064d7a54773cebc70abf30efac70b6b8);
+        
+    
+            var circle_marker_d1e2ee9100c6e92548cdf91841eb9d05 = L.circleMarker(
+                [37.64658841, 127.2355145],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_064d7a54773cebc70abf30efac70b6b8);
+        
+    
+        var popup_0c525400d9c8939678776f56b1c4aefb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_32f7f300d6e29bfc02981b9b3ca0ee3d = $(`<div id="html_32f7f300d6e29bfc02981b9b3ca0ee3d" style="width: 100.0%; height: 100.0%;">                 <b>점포명:</b> 또래오래<br>                 <b>담당자:</b> 김들<br>                 <b>주소:</b> 경기 남양주시 평내동 582-10<br>                 <b>대표자명:</b> 원재순<br>                 <b>업종:</b> <br>                 <b>연락처:</b> <br>                 <b>교육 희망일:</b> <br>                 <b>비즈폼 확인:</b> <br>                 <b>비고:</b> 프로젝트 관련 간단 설명 완료, 고민 후 다시 연락주신다고 하여 개인 연락처 제공함             </div>`)[0];
+                popup_0c525400d9c8939678776f56b1c4aefb.setContent(html_32f7f300d6e29bfc02981b9b3ca0ee3d);
+            
+        
+
+        circle_marker_d1e2ee9100c6e92548cdf91841eb9d05.bindPopup(popup_0c525400d9c8939678776f56b1c4aefb)
+        ;
+
+        
+    
+    
+            circle_marker_d1e2ee9100c6e92548cdf91841eb9d05.bindTooltip(
+                `<div>
+                     또래오래
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2c0658c78edf6120a9caa9621bed29d4 = L.circleMarker(
+                [37.64679244, 127.2354931],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_064d7a54773cebc70abf30efac70b6b8);
+        
+    
+        var popup_e9e1e77f95f6c672c060d70599bd6346 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_34c1d3008d88c82c0531b302bc928ab1 = $(`<div id="html_34c1d3008d88c82c0531b302bc928ab1" style="width: 100.0%; height: 100.0%;">                 <b>점포명:</b> 맨날김치찌개<br>                 <b>담당자:</b> 김들<br>                 <b>주소:</b> 경기 남양주시 평내동 582-3<br>                 <b>대표자명:</b> 문희선<br>                 <b>업종:</b> <br>                 <b>연락처:</b> <br>                 <b>교육 희망일:</b> <br>                 <b>비즈폼 확인:</b> O<br>                 <b>비고:</b>              </div>`)[0];
+                popup_e9e1e77f95f6c672c060d70599bd6346.setContent(html_34c1d3008d88c82c0531b302bc928ab1);
+            
+        
+
+        circle_marker_2c0658c78edf6120a9caa9621bed29d4.bindPopup(popup_e9e1e77f95f6c672c060d70599bd6346)
+        ;
+
+        
+    
+    
+            circle_marker_2c0658c78edf6120a9caa9621bed29d4.bindTooltip(
+                `<div>
+                     맨날김치찌개
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d7f6625bffce89d0de51198658fc1a38 = L.circleMarker(
+                [37.6473141, 127.2351285],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_064d7a54773cebc70abf30efac70b6b8);
+        
+    
+        var popup_21de7d71e6893067952624240bb69e9d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6a087a6b65e64c65c8d879f48a63a172 = $(`<div id="html_6a087a6b65e64c65c8d879f48a63a172" style="width: 100.0%; height: 100.0%;">                 <b>점포명:</b> 봉정가든<br>                 <b>담당자:</b> 김들<br>                 <b>주소:</b> 평내동 588-18<br>                 <b>대표자명:</b> 최훈<br>                 <b>업종:</b> <br>                 <b>연락처:</b> <br>                 <b>교육 희망일:</b> <br>                 <b>비즈폼 확인:</b> O<br>                 <b>비고:</b>              </div>`)[0];
+                popup_21de7d71e6893067952624240bb69e9d.setContent(html_6a087a6b65e64c65c8d879f48a63a172);
+            
+        
+
+        circle_marker_d7f6625bffce89d0de51198658fc1a38.bindPopup(popup_21de7d71e6893067952624240bb69e9d)
+        ;
+
+        
+    
+    
+            circle_marker_d7f6625bffce89d0de51198658fc1a38.bindTooltip(
+                `<div>
+                     봉정가든
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_70f87cc4147d4df62b7f8d9c41f94e0c = L.circleMarker(
+                [37.64673353, 127.2348211],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_064d7a54773cebc70abf30efac70b6b8);
+        
+    
+        var popup_ed7b43f90e198dbf736b273f6fd5040e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_74ef81c2c71a776b45265dad0c42b080 = $(`<div id="html_74ef81c2c71a776b45265dad0c42b080" style="width: 100.0%; height: 100.0%;">                 <b>점포명:</b> 참치자객<br>                 <b>담당자:</b> 김들<br>                 <b>주소:</b> 평내동 579<br>                 <b>대표자명:</b> 김능수<br>                 <b>업종:</b> <br>                 <b>연락처:</b> <br>                 <b>교육 희망일:</b> <br>                 <b>비즈폼 확인:</b> O<br>                 <b>비고:</b>              </div>`)[0];
+                popup_ed7b43f90e198dbf736b273f6fd5040e.setContent(html_74ef81c2c71a776b45265dad0c42b080);
+            
+        
+
+        circle_marker_70f87cc4147d4df62b7f8d9c41f94e0c.bindPopup(popup_ed7b43f90e198dbf736b273f6fd5040e)
+        ;
+
+        
+    
+    
+            circle_marker_70f87cc4147d4df62b7f8d9c41f94e0c.bindTooltip(
+                `<div>
+                     참치자객
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_357a9b0d7cbcb47e24fd97d89933cf5f = L.circleMarker(
+                [37.64692141, 127.2353583],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_064d7a54773cebc70abf30efac70b6b8);
+        
+    
+        var popup_c12b2025be9df4aa6ed7b92d639d15c3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_004263c7d63c49b991b8cbeafb6d1be7 = $(`<div id="html_004263c7d63c49b991b8cbeafb6d1be7" style="width: 100.0%; height: 100.0%;">                 <b>점포명:</b> 한잔더<br>                 <b>담당자:</b> 김들<br>                 <b>주소:</b> 평내동 582-2<br>                 <b>대표자명:</b> 차현주<br>                 <b>업종:</b> <br>                 <b>연락처:</b> <br>                 <b>교육 희망일:</b> <br>                 <b>비즈폼 확인:</b> O<br>                 <b>비고:</b>              </div>`)[0];
+                popup_c12b2025be9df4aa6ed7b92d639d15c3.setContent(html_004263c7d63c49b991b8cbeafb6d1be7);
+            
+        
+
+        circle_marker_357a9b0d7cbcb47e24fd97d89933cf5f.bindPopup(popup_c12b2025be9df4aa6ed7b92d639d15c3)
+        ;
+
+        
+    
+    
+            circle_marker_357a9b0d7cbcb47e24fd97d89933cf5f.bindTooltip(
+                `<div>
+                     한잔더
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c435228d225c7b6833c60b17b08c3629 = L.circleMarker(
+                [37.64461333, 127.2368341],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_064d7a54773cebc70abf30efac70b6b8);
+        
+    
+        var popup_0ad5e34a45c8234b5bfd52dfba45d830 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3d2847f802889b6b9c4e74161a15427d = $(`<div id="html_3d2847f802889b6b9c4e74161a15427d" style="width: 100.0%; height: 100.0%;">                 <b>점포명:</b> 육담향<br>                 <b>담당자:</b> 김들<br>                 <b>주소:</b> 평내동 565-2<br>                 <b>대표자명:</b> <br>                 <b>업종:</b> <br>                 <b>연락처:</b> <br>                 <b>교육 희망일:</b> <br>                 <b>비즈폼 확인:</b> <br>                 <b>비고:</b>              </div>`)[0];
+                popup_0ad5e34a45c8234b5bfd52dfba45d830.setContent(html_3d2847f802889b6b9c4e74161a15427d);
+            
+        
+
+        circle_marker_c435228d225c7b6833c60b17b08c3629.bindPopup(popup_0ad5e34a45c8234b5bfd52dfba45d830)
+        ;
+
+        
+    
+    
+            circle_marker_c435228d225c7b6833c60b17b08c3629.bindTooltip(
+                `<div>
+                     육담향
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2ac1e712cc6e6d9162f745b01f23f2f8 = L.circleMarker(
+                [37.64461333, 127.2368341],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_064d7a54773cebc70abf30efac70b6b8);
+        
+    
+        var popup_d89e8e1f8b18cbdb2e970003f9f560d5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_391efe569ce3267ef410babc9baa0426 = $(`<div id="html_391efe569ce3267ef410babc9baa0426" style="width: 100.0%; height: 100.0%;">                 <b>점포명:</b> 리얼파스타<br>                 <b>담당자:</b> 김들<br>                 <b>주소:</b> 평내동 565-2<br>                 <b>대표자명:</b> <br>                 <b>업종:</b> <br>                 <b>연락처:</b> <br>                 <b>교육 희망일:</b> <br>                 <b>비즈폼 확인:</b> <br>                 <b>비고:</b>              </div>`)[0];
+                popup_d89e8e1f8b18cbdb2e970003f9f560d5.setContent(html_391efe569ce3267ef410babc9baa0426);
+            
+        
+
+        circle_marker_2ac1e712cc6e6d9162f745b01f23f2f8.bindPopup(popup_d89e8e1f8b18cbdb2e970003f9f560d5)
+        ;
+
+        
+    
+    
+            circle_marker_2ac1e712cc6e6d9162f745b01f23f2f8.bindTooltip(
+                `<div>
+                     리얼파스타
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
